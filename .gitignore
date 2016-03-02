@@ -1,8 +1,0 @@
-node_modules/
-*.log
-*.js
-bundle.css
-*.html
-!karma.conf.js
-backgrounds/
-assets/icons.svg
