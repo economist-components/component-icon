@@ -1,0 +1,66 @@
+#!/usr/bin/env node
+'use strict';
+
+var fs = require('fs');
+var postcss = require('postcss');
+var postcssSVG = require('postcss-svg');
+
+function makePostCSS() {
+  var processors = [
+    postcssSVG({
+      paths: [
+        './icons/'
+      ],
+      defaults: '',
+      silent: false,
+      func: 'svg',
+    })
+  ];
+
+  return postcss(processors);
+}
+
+var files = fs.readdirSync(__dirname + '/icons')
+  .map(function removeSvgExt(fname) {
+    return fname
+        .replace(/\.svg$/, '')
+        .replace(/^.*?icons\//, '');
+  });
+
+var colorVariations = require('./color-variations.json')
+
+function generateSourceCSS(iconName) {
+  var className = '.icon--' + iconName
+  var source = [];
+
+  source.push(
+    ''.concat(className, ' {\n  background: svg("', iconName, '");\n}\n')
+  );
+
+  source = source.concat(Object.keys(colorVariations).map(function(colorName) {
+    var colorHex = colorVariations[colorName];
+    return ''.concat(
+      className, '-', colorName, ' {\n',
+      '  background: svg("', iconName, '", "[fill]: ', colorHex, '");\n',
+      '}'
+    );
+  }));
+
+  return source.join('\n');
+}
+
+files.forEach(function(iname) {
+  var outName = 'backgrounds/' + iname + '.css'
+  var css = makePostCSS()
+    .process(generateSourceCSS(iname))
+    .css
+
+  css = css.replace(/(\d+\.\d{2})\d+/g, '$1');
+
+  css = css.replace(/%3c\!--.*?--%3e/gi, '');
+
+  css = css.replace(/%20xmlns%3Asketch%3D%22http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%2Fns%22/g, '')
+
+  console.log('Writing', outName)
+  fs.writeFileSync(outName, css)
+});

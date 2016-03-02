@@ -1,0 +1,11 @@
+.Icon--rounded {
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.Icon--rounded svg {
+  transform-origin: center center;
+  transform: scale(0.7);
+  -moz-transform: scale(0.7);
+  -moz-transform-origin: 0 0;
+}
