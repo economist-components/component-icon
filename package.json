@@ -171,7 +171,7 @@
     "react-addons-test-utils": "^0.14.7",
     "react-dom": "^0.14.7",
     "semantic-release": "^4.3.5",
-    "stylelint": "^4.3.5",
+    "stylelint": "^4.5.0",
     "stylelint-config-strict": "^2.1.0",
     "svg-sprite": "^1.2.5",
     "svg4everybody": "^2.0.0",
