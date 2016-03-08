@@ -172,7 +172,7 @@
     "react-dom": "^0.14.7",
     "semantic-release": "^4.3.5",
     "stylelint": "^4.3.5",
-    "stylelint-config-strict": "^2.1.0",
+    "stylelint-config-strict": "^3.0.0",
     "svg-sprite": "^1.2.5",
     "svg4everybody": "^2.0.0",
     "svgo": "^0.5.3",
