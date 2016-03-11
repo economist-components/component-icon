@@ -176,7 +176,7 @@
     "svg-sprite": "^1.2.5",
     "svg4everybody": "^2.0.0",
     "svgo": "^0.5.3",
-    "validate-commit-msg": "^2.2.0",
+    "validate-commit-msg": "^2.3.1",
     "watchify": "^3.7.0"
   },
   "peerDependencies": {
