@@ -142,7 +142,7 @@
     "live-server": "^0.9.2",
     "mocha": "^2.4.5",
     "npm-assets": "^0.1.1",
-    "npm-run-all": "^1.5.1",
+    "npm-run-all": "^1.6.0",
     "phantomjs-prebuilt": "^2.1.5",
     "postcss": "^4.1.16",
     "postcss-cli": "^2.5.1",
