@@ -8,8 +8,8 @@
 .Icon--rounded svg {
   /* stylelint-enable selector-no-type */
   transform: scale(0.7);
-  transform-origin: center center;
-  /* stylelint-disable property-no-vendor-prefix, rule-properties-order */
+  /* stylelint-disable property-no-vendor-prefix  */
   -moz-transform-origin: 0 0;
-  /* stylelint-enable property-no-vendor-prefix, rule-properties-order */
+  /* stylelint-enable property-no-vendor-prefix */
+  transform-origin: center center;
 }
