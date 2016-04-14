@@ -15,11 +15,10 @@
   /* stylelint-enable selector-no-type */
   -webkit-transform: scale(0.7);
           transform: scale(0.7);
+  /* stylelint-disable property-no-vendor-prefix */
+  /* stylelint-enable property-no-vendor-prefix */
   -webkit-transform-origin: center center;
           transform-origin: center center;
-  /* stylelint-disable property-no-vendor-prefix, rule-properties-order */
-  -moz-transform-origin: 0 0;
-  /* stylelint-enable property-no-vendor-prefix, rule-properties-order */
 }
 /* Main brand logo */
 .icon--economist-small {
