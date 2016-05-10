@@ -119,7 +119,7 @@
   "devDependencies": {
     "@economist/doc-pack": "^1.0.6",
     "@economist/provision-react-component": "2.1.0",
-    "babel": "^5.8.34",
+    "babel": "^6.5.2",
     "babel-polyfill": "^6.8.0",
     "babelify": "^6.4.0",
     "browserify": "^13.0.0",
