@@ -11,11 +11,13 @@
   border-radius: 50%;
 }
 /* stylelint-disable selector-no-type */
+/* not able to add class to svg */
 .Icon--rounded svg {
   /* stylelint-enable selector-no-type */
   -webkit-transform: scale(0.7);
           transform: scale(0.7);
   /* stylelint-disable property-no-vendor-prefix */
+  /* different values to non-prefix */
   /* stylelint-enable property-no-vendor-prefix */
   -webkit-transform-origin: center center;
           transform-origin: center center;
