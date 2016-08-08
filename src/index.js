@@ -67,6 +67,7 @@ export default class Icon extends React.Component {
         'balloon',
         'camera',
         'more',
+        'purchase-rights',
       ],
     };
   }
