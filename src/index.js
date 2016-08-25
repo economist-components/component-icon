@@ -68,6 +68,7 @@ export default class Icon extends React.Component {
         'camera',
         'more',
         'purchase-rights',
+        'print-edition',
       ],
     };
   }
