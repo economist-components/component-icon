@@ -23,7 +23,7 @@ export default class Icon extends React.Component {
     const defaultConfig = {
       className: '',
       uri: '/assets/icons.svg',
-      size: '60px',
+      size: '48px',
       rounded: false,
     };
     return Object.assign(defaultConfig, configObj);
