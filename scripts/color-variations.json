@@ -1,8 +1,9 @@
 {
   "economist": "#E3120B",
-  "moscow": "#7a7a7a",
   "london": "#B6B6B6",
+  "moscow": "#7a7a7a",
   "kiev": "#383e42",
   "thimphu": "#FFFFFF",
-  "chicago": "#3E51B5"
+  "chicago": "#3E51B5",
+  "berlin":  "#f2f2f2"
 }
