@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 let configObj = {};
 export function config(opts) {
@@ -9,13 +10,13 @@ export default class Icon extends React.Component {
 
   static get propTypes() {
     return {
-      icon: React.PropTypes.oneOf(Icon.options.icon).isRequired,
-      background: React.PropTypes.string,
-      color: React.PropTypes.string,
-      size: React.PropTypes.string,
-      className: React.PropTypes.string,
-      uri: React.PropTypes.string,
-      rounded: React.PropTypes.bool,
+      icon: PropTypes.oneOf(Icon.options.icon).isRequired,
+      background: PropTypes.string,
+      color: PropTypes.string,
+      size: PropTypes.string,
+      className: PropTypes.string,
+      uri: PropTypes.string,
+      rounded: PropTypes.bool,
     };
   }
 
