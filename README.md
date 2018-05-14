@@ -33,6 +33,23 @@ By default, the background icons are black.
 
 To use a color variation, add `-COLORNAME` to the class name. For example, `icon icon-facebook` would become `icon icon-facebook-london`. If that color variation is not there (we don't want to add them all at once!), you need to change this project and publish it again with the new color there.
 
+### How to use inline icons?
+
+To inline icon to your HTML, import React component and use it in your code. Each icon is available by name as a single component and takes `className` as an argument. 
+
+Icon does not have default styles.
+
+Example:
+```js
+import IconTwitter from '@economist/component-icon/lib/inline-icons/twitter';
+
+...
+
+<IconTwitter className="myIcon" />
+
+```
+
+
 ## Install
 
 ```bash
