@@ -40,7 +40,7 @@
     "build:css": "cp $npm_package_directories_src/*.css $npm_package_directories_lib",
     "build:icons": "npm-run-all --parallel build:icons:*",
     "prebuild:icons:css": "mkdir -p backgrounds",
-    "prebuild:icons:inline": "mkdir -p lib/inline-icons",
+    "prebuild:icons:inline": "mkdir -p $npm_package_directories_lib_inline_icons",
     "build:icons:css": "scripts/compile-backgrounds",
     "build:icons:svgsprite": "svg-sprite -l \"verbose\" --symbol-dest assets/ --ss icons.svg -s icons/*",
     "build:icons:inline": "scripts/generate-inline-icons && babel $npm_package_directories_lib_inline_icons -d $npm_package_directories_lib_inline_icons --source-maps inline",
