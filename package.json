@@ -24,7 +24,8 @@
     "lib": "lib",
     "site": "site",
     "src": "src",
-    "test": "test"
+    "test": "test",
+    "lib_inline_icons": "lib/inline-icons"
   },
   "repository": {
     "type": "git",
@@ -39,8 +40,10 @@
     "build:css": "cp $npm_package_directories_src/*.css $npm_package_directories_lib",
     "build:icons": "npm-run-all --parallel build:icons:*",
     "prebuild:icons:css": "mkdir -p backgrounds",
+    "prebuild:icons:inline": "mkdir -p lib/inline-icons",
     "build:icons:css": "scripts/compile-backgrounds",
     "build:icons:svgsprite": "svg-sprite -l \"verbose\" --symbol-dest assets/ --ss icons.svg -s icons/*",
+    "build:icons:inline": "scripts/generate-inline-icons && babel $npm_package_directories_lib_inline_icons -d $npm_package_directories_lib_inline_icons --source-maps inline",
     "build:js": "babel $npm_package_directories_src -d $npm_package_directories_lib --source-maps inline",
     "clean-svg": "svgo --pretty --config=.svgo.yml -f icons -o icons",
     "predoc": "mkdir -p $npm_package_directories_site",
@@ -130,6 +133,7 @@
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
     "browserify-istanbul": "^2.0.0",
+    "camelcase": "^5.0.0",
     "chai": "^3.5.0",
     "chai-spies": "^0.7.1",
     "coveralls": "^2.11.9",
@@ -170,6 +174,7 @@
     "stylelint": "^6.5.1",
     "stylelint-config-strict": "^5.0.0",
     "svg-sprite": "^1.2.5",
+    "svg-to-jsx": "^1.0.0",
     "svg4everybody": "^2.0.0",
     "svgo": "^0.6.4",
     "travis-after-all": "^1.4.4",

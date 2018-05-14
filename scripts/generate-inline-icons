@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+/* eslint-disable */
+'use strict';
+
+const svgToJsx = require('svg-to-jsx');
+const fs = require('fs');
+const path = require('path');
+const camelCase = require('camelcase');
+
+const SOURCE_DIR = './icons/';
+const OUTPUT_DIR = './lib/inline-icons/';
+
+const getFile = (name, iconJsx) => {
+  const componentName = camelCase(name, { pascalCase: 1 });
+  return `/* eslint-disable */
+import React from 'react';
+
+const Icon${componentName} = ({ className }) => (<span className={className}>${iconJsx}</span>);
+
+export default Icon${componentName};
+`;
+};
+
+const generate = () => {
+  console.log('Generating inline icons');
+  return Promise.all(fs
+    .readdirSync(SOURCE_DIR)
+    .map((file) => `${SOURCE_DIR}/${file}`)
+    .filter((file) => fs.lstatSync(file).isFile() && file.includes('.svg'))
+    .map((file) => {
+      return svgToJsx(fs.readFileSync(file).toString())
+        .then(content => {
+          const iconName = path.basename(file).match(/(.*)\.svg$/)[1];
+          fs.writeFileSync(path.join(OUTPUT_DIR, `${iconName}.js`), getFile(iconName, content));
+        });
+    }))
+    .catch((error) => {
+      console.error('Error generating inline icons', error);
+      process.exit(1);
+    });
+};
+
+generate();
